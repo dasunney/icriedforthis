@@ -1,0 +1,150 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: comic sans ms;
+}
+
+:root {
+  --hue-neutral: 82;
+  --hue-wrong: 0;
+  --hue-correct: 145;
+}
+
+h1{
+  color:#fff;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h2{
+  color:#fff;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+footer{
+  text-align: center;
+  margin-top:1px;
+  color:#fff;
+  font-size:15px;
+}
+
+body {
+  --hue: var(--hue-neutral);
+  padding: 10px;
+  margin:20px;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(var(--hue), 100%, 34%);
+  
+}
+
+body.correct {
+  --hue: var(--hue-correct);
+}
+
+body.wrong {
+  --hue: var(--hue-wrong);
+}
+
+.container {
+  width: 800px;
+  max-width: 80%;
+  background-color: #fbfb7b;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 0 10px 2px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.btn {
+  --hue: var(--hue-neutral);
+  border: 1px solid hsl(var(--hue), 100%, 20%);
+  background-color: hsl(var(--hue), 100%, 35%);
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: white;
+  outline: none;
+}
+
+.btn:hover {
+  color: #363636;
+}
+
+.btn.correct {
+  --hue: var(--hue-correct);
+  background-image:url("https://cdn.glitch.com/051d8185-45a2-4129-83e5-f7fda0530eea%2FUntitled89.jpg?v=1608085975282");
+}
+
+.btn.wrong {
+  --hue: var(--hue-wrong);
+   background-image:url("https://cdn.glitch.com/051d8185-45a2-4129-83e5-f7fda0530eea%2FUntitled88.jpg?v=1608085974814");
+}
+
+.start-btn, .next-btn {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 10px 20px;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hide {
+  display: none;
+}
+
+img {
+  max-height: 400px;
+  max-width: 400px;
+  width: 100%;
+  display: block;
+  margin-top:22px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flip-card {
+  background-color: transparent;
+  perspective: 1000px;
+}
+.flip-card-inner {
+  position: middle;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+.flip-card-back {
+  background-color: dodgerblue;
+  color: white;
+  transform: rotateY(180deg);
+}
